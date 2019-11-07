@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">TikTakToe</string>
+    <string name="game_name">TikTakToe</string>
+    <string name="select_player">Enemy:PC|Human</string>
+</resources>
