@@ -26,49 +26,21 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/button1"
+            android:id="@+id/button_00"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:textSize="30sp"
             android:onClick="answer"/>
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/button_01"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:textSize="30sp"
             android:onClick="answer"/>
 
         <Button
-            android:id="@+id/button3"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:textSize="30sp"
-            android:onClick="answer"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/button4"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:textSize="30sp"
-            android:onClick="answer"/>
-
-        <Button
-            android:id="@+id/button5"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:textSize="30sp"
-            android:onClick="answer"/>
-
-        <Button
-            android:id="@+id/button6"
+            android:id="@+id/button_02"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:textSize="30sp"
@@ -82,21 +54,49 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/button7"
+            android:id="@+id/button_10"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:textSize="30sp"
             android:onClick="answer"/>
 
         <Button
-            android:id="@+id/button8"
+            android:id="@+id/button_11"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:textSize="30sp"
             android:onClick="answer"/>
 
         <Button
-            android:id="@+id/button9"
+            android:id="@+id/button_12"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:textSize="30sp"
+            android:onClick="answer"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/button_20"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:textSize="30sp"
+            android:onClick="answer"/>
+
+        <Button
+            android:id="@+id/button_21"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:textSize="30sp"
+            android:onClick="answer"/>
+
+        <Button
+            android:id="@+id/button_22"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:textSize="30sp"
