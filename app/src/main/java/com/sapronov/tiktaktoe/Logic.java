@@ -2,7 +2,27 @@ package com.sapronov.tiktaktoe;
 
 public class Logic {
 
+    private int counter;
+    private final int[][] buttonsId;
+
+    public Logic(int[][] buttonsId){
+        counter=0;
+        this.buttonsId=buttonsId;
+    }
+
+    public boolean isFinish() {
+        return counter == 8;
+    }
+    public boolean isPlayerTurn () {
+        return counter % 2 == 0;
+    }
+
+    public void restcounter(){
+        counter=0;
+    }
+
     public boolean checkWin(String[][] buttonsText) {
+        counter++;
         for (int i = 0; i < 3; i++) {
             if (buttonsText[i][0].equals(buttonsText[i][1])
                     && buttonsText[i][0].equals(buttonsText[i][2])
