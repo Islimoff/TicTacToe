@@ -13,7 +13,6 @@ public class MainActivity extends AppCompatActivity {
     private Button[][] buttons = new Button[3][3];
     private int[][] buttonsId = new int[3][3];
     private Logic logic;
-//    private Switch swich=findViewById(R.id.switch1);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,11 +29,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void answer(View view) {
+        Switch toggle = (Switch) findViewById(R.id.switch1);
         Button button = (Button) view;
         String player;
         if (logic.isPlayerTurn()) {
             player = "X";
             button.setText(player);
+            if (toggle.isChecked()){
+                Button button1=findViewById(R.id.button_22);
+                button1.setText("T");
+            }
         } else {
             player = "0";
             button.setText(player);
