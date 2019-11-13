@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.Switch;
 import android.widget.Toast;
 
@@ -22,40 +23,39 @@ public class MainActivity extends AppCompatActivity {
             for (int j = 0; j < 3; j++) {
                 String id = "button_" + i + j;
                 buttons[i][j] = findViewById(getResources().getIdentifier(id, "id", getPackageName()));
-                buttonsId[i][j]=buttons[i][j].getId();
+                buttonsId[i][j] = buttons[i][j].getId();
             }
         }
-        logic=new Logic(buttonsId);
+        logic = new Logic(buttonsId);
+        Switch toggle = (Switch) findViewById(R.id.switch1);
+//        if (toggle != null) {
+//            toggle.setOnCheckedChangeListener((CompoundButton.OnCheckedChangeListener) this);
+//        }
     }
 
     public void answer(View view) {
-        Switch toggle = (Switch) findViewById(R.id.switch1);
         Button button = (Button) view;
-        String player;
+        Switch toggle = (Switch) findViewById(R.id.switch1);
         if (logic.isPlayerTurn()) {
-            player = "X";
-            button.setText(player);
-            if (toggle.isChecked()){
-                Button button1=findViewById(R.id.button_22);
-                button1.setText("T");
-            }
-        } else {
-            player = "0";
-            button.setText(player);
+            button.setText("X");
+            button.setClickable(false);
+            makeStep("X");
+        }else {
+            button.setText("0");
+            button.setClickable(false);
+            makeStep("0");
         }
-        button.setClickable(false);
-        makeStep(player);
     }
 
     private void makeStep(String text) {
         if (logic.isFinish()) {
             showMessage("Nobody won, it was a draw!");
-            logic.restcounter();
+            logic.resetCounter();
             resetButtons();
         }
         if (logic.checkWin(setAnswers())) {
             showMessage("The Player " + text + " won, congratulations!");
-            logic.restcounter();
+            logic.resetCounter();
             resetButtons();
         }
     }
@@ -79,7 +79,24 @@ public class MainActivity extends AppCompatActivity {
         return buttonsText;
     }
 
+    private void AI() {
+        Switch toggle = (Switch) findViewById(R.id.switch1);
+        if (toggle.isChecked()) {
+            Button button = findViewById(logic.randomId());
+            button.setText("O");
+        }
+    }
+
     private void showMessage(String text) {
         Toast.makeText(this, text, Toast.LENGTH_SHORT).show();
+    }
+
+    private void setEnemy(View view){
+
+            Button random = findViewById(logic.randomId());
+            random.setText("0");
+            random.setClickable(false);
+            makeStep("0");
+
     }
 }
