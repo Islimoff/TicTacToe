@@ -1,10 +1,11 @@
 package com.sapronov.tiktaktoe;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class Logic {
+public class Logic implements Serializable {
 
     private int counter;
     private final int[][] buttonsId;
@@ -16,12 +17,34 @@ public class Logic {
         emptyButtonsID = new ArrayList<>();
     }
 
-    public boolean isFinish() {
-        return counter == 8;
+    public int getCounter() {
+        return counter;
     }
 
-    public boolean isPlayerTurn() {
-        return counter % 2 == 0;
+    public void setCounter(int counter) {
+        this.counter = counter;
+    }
+
+    public int[][] getButtonsId() {
+        return buttonsId;
+    }
+
+    public List<Integer> getEmptyButtonsID() {
+        return emptyButtonsID;
+    }
+
+    public void setEmptyButtonsID(List<Integer> emptyButtonsID) {
+        this.emptyButtonsID = emptyButtonsID;
+    }
+
+    public boolean isFinish() {
+        return counter == 9;
+    }
+
+    public String getPlayerName() {
+        if(counter % 2 == 0){
+            return "X";
+        }else return "0";
     }
 
     public void resetCounter() {
